@@ -1,35 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="./assets/img/4geeks.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Domain Name Generator Project</title>
+<head>
+  <meta charset="UTF-8">
+  <title>Domain Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #domains {
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
 
-    <!-- Fontawesome is our recomended library for icons -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <!-- Write your HTML code here, you can delete everything withing the body tags -->
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./assets/img/rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
-      </div>
-    </div>
+  <h1>Random Domain Generator Project</h1>
+  <button id="generateBtn">Generate Domains</button>
 
-    <!-- Do not delete this script tag, this is what connects your HTML with the Javascript code -->
-    <script type="module" src="/app.js"></script>
-  </body>
+  <div id="domains"></div>
+
+  <script>
+    const pronoun = ['their', 'her', 'my', 'his'];
+    const adjective = ['pink', 'sparkly', 'small', 'cool'];
+    const noun = ['lantern', 'glacier', 'melody', 'compass'];
+    const extension = ['com', 'io', 'biz', 'store'];
+
+    function generateDomains() {
+      let domainList = '';
+      for (let p of pronoun) {
+        for (let a of adjective) {
+          for (let n of noun) {
+            for (let ext of extension) {
+              domainList += `<div>${p}${a}${n}.${ext}</div>`;
+            }
+          }
+        }
+      }
+      document.getElementById('domains').innerHTML = domainList;
+    }
+
+    // Attach function to the button
+    document.getElementById('generateBtn').addEventListener('click', generateDomains);
+  </script>
+
+</body>
 </html>
