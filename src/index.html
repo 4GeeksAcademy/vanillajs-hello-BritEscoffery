@@ -16,10 +16,12 @@
 </head>
 <body>
 
-  <h1>Random Domain Generator Project</h1>
-  <button id="generateBtn">Generate Domains</button>
+ <div class="container">
+    <h1 class="mb-4">Random Domain Generator</h1>
+    <button id="generateBtn" class="btn btn-primary mb-3">Generate Domains</button>
+    <div id="domains" class="list-group"></div>
+  </div>
 
-  <div id="domains"></div>
 
   <script>
     const pronoun = ['their', 'her', 'my', 'his'];
@@ -41,9 +43,12 @@
       document.getElementById('domains').innerHTML = domainList;
     }
 
-    // Attach function to the button
+    // Attaching function to the button
     document.getElementById('generateBtn').addEventListener('click', generateDomains);
   </script>
+ 
+ <!-- ✅ Bootstrap JS Bundle (includes Popper.js) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
