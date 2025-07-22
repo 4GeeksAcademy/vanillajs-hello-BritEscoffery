@@ -4,14 +4,7 @@
   <meta charset="UTF-8">
   <title>Domain Generator</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    #domains {
-      margin-top: 20px;
-      line-height: 1.6;
-    }
+    
   </style>
 </head>
 <body>
@@ -19,32 +12,45 @@
  <div class="container">
     <h1 class="mb-4">Random Domain Generator</h1>
     <button id="generateBtn" class="btn btn-primary mb-3">Generate Domains</button>
-    <div id="domains" class="list-group"></div>
+    <ul id="domains" class="list-group"></ul>
   </div>
 
 
   <script>
+    console.log('test')
     const pronoun = ['their', 'her', 'my', 'his'];
     const adjective = ['pink', 'sparkly', 'small', 'cool'];
     const noun = ['lantern', 'glacier', 'melody', 'compass'];
     const extension = ['com', 'io', 'biz', 'store'];
 
     function generateDomains() {
-      let domainList = '';
-      for (let p of pronoun) {
-        for (let a of adjective) {
-          for (let n of noun) {
-            for (let ext of extension) {
-              domainList += `<div>${p}${a}${n}.${ext}</div>`;
+    let element = document.querySelector('#domains')
+      pronoun.forEach(
+        (p) => {
+          adjective.forEach(
+            (a) => {
+              noun.forEach(
+                (n) => {
+                  extension.forEach(
+                    (e) => 
+                    element.innerText += " " + p + a + noun[0] + '.' + extension[0]
+                  )
+                  
+                }
+              )
+              
             }
-          }
-        }
-      }
-      document.getElementById('domains').innerHTML = domainList;
+          )
+        
+        }  
+      )
+
+    
+    console.log(element)
     }
 
     // Attaching function to the button
-    document.getElementById('generateBtn').addEventListener('click', generateDomains);
+    generateDomains()
   </script>
  
  <!-- ✅ Bootstrap JS Bundle (includes Popper.js) -->
