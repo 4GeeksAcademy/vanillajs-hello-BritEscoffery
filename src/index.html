@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Random Domain Generator</title>
+  <title>Random Domain  - Edited for General Coding Standards</title>
   <style>
     
   </style>
@@ -27,6 +27,7 @@
     const domainsList = document.querySelector('#domains');
 
     function generateDomains() {
+
       domainsList.innerHTML = '';
       let domainsHTML = '';
       pronoun.forEach(
@@ -52,11 +53,12 @@
       )
 
     domainsList.innerHTML = domainsHTML;
-    console.log(element)
+    // console.log(element)
     }
 
     // Attaching function to the button
    generateBtn.addEventListener('click', generateDomains);
+   generateDomains();
   </script>
  
  <!-- ✅ Bootstrap JS Bundle (includes Popper.js) -->
